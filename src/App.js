@@ -35,7 +35,7 @@ function App(){
     return(
     <div>
       <ul>
-        
+        <UserGreeting/>
         {/* <Heading/>
         <StudentForm addStudent = {addStudent}/>
         <StudentList students = {students}/> */}
