@@ -1,15 +1,13 @@
 import React from 'react'
 
 
-function StudentListItem({student:{name} }){
+function StudentListItem({student:{name,id} } ){
 
 
     return(
         <div>
             <li>
-            {
-                name
-            }
+            { name } {id}
             </li>
         </div>
     )
