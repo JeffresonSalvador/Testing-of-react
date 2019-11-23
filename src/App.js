@@ -21,6 +21,22 @@ import ImplementingFocusInput from './component/ImplementingFocusInput';
 import ForwardingParentRefs from './component/ForwardingParentRefs';
 import ErrorHandling from './component/ErrorHandling';
 import ErrorBoundary from './component/ErrorBoundary';
+import ClassCounter from './hooks/ClassCounter';
+import HookCounter from './hooks/HookCounter';
+import HookCounterTwo from './hooks/HookCounterTwo';
+import HookCounterThree from './hooks/HookCounterThree';
+import HookCounterFour from './hooks/HookCounterFour';
+import HookCounterOne from './useEffect/HookCounterOne';
+import HookMouse from './useEffect/HookMouse';
+import MouseContainer from './useEffect/MouseContainer';
+import IntervalHookCounter from './useEffect/IntervalHookCounter';
+import DataFetching from './dataFetching/DataFetching';
+import DataFetchingIndividual from './dataFetching/DataFetchingIndividual'
+import ComponentC from './useContext/ComponentC';
+
+
+export const UserContext = React.createContext()
+export const ChannelContext = React.createContext()
 
 function App(){
     const [students,setStudents] = useState ([
@@ -47,12 +63,40 @@ function App(){
 
     }
    
-
+    
     return(
     <div className = "App">
 
       <ul>
-     <ErrorBoundary>
+      <UserContext.Provider value={'jefff'}>
+        <ChannelContext.Provider value={'codeEvolution'}>
+           <ComponentC/>
+        </ChannelContext.Provider>
+      </UserContext.Provider>
+
+      {/* <DataFetchingIndividual/> */}
+
+      {/* <DataFetching/> */}
+
+      {/* <IntervalHookCounter/> */}
+
+      {/* <MouseContainer/> */}
+
+      {/* <HookMouse/> */}
+
+      {/* <HookCounterOne/> */}
+
+      {/* <HookCounterFour/> */}
+
+      {/* <HookCounterThree/> */}
+
+      {/* <HookCounterTwo/> */}
+
+      {/* <HookCounter/> */}
+
+      {/* <ClassCounter/> */}
+
+     {/* <ErrorBoundary>
           <ErrorHandling heroName="batman"/>
       </ErrorBoundary>
       
@@ -62,7 +106,7 @@ function App(){
       
       <ErrorBoundary>
           <ErrorHandling heroName="Joker"/>
-      </ErrorBoundary>
+      </ErrorBoundary> */}
       
         {/* <PortalDemo/> */}
 
