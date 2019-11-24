@@ -1,7 +1,7 @@
 import React from 'react'
 import {UserContext, ChannelContext} from '../App'
 
-function ComponentF() {
+function UseContextComponentF() {
     return (
         <div>
             <UserContext.Consumer>
@@ -22,4 +22,4 @@ function ComponentF() {
     )
 }
 
-export default ComponentF
+export default UseContextComponentF

@@ -1,5 +1,5 @@
 import React from 'react'
-import ComponentE from './ComponentE'
+import ComponentE from '../useReducer/ComponentE'
 
 function ComponentC() {
     return (

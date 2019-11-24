@@ -1,4 +1,4 @@
-import React,{useState}  from 'react'
+import React,{useState,useReducer}  from 'react'
 
 import '../src/App.css'
 import Heading from './component/Heading'
@@ -32,13 +32,47 @@ import MouseContainer from './useEffect/MouseContainer';
 import IntervalHookCounter from './useEffect/IntervalHookCounter';
 import DataFetching from './dataFetching/DataFetching';
 import DataFetchingIndividual from './dataFetching/DataFetchingIndividual'
-import ComponentC from './useContext/ComponentC';
+import UseContextComponentC from './useContext/UseContextComponentC';
+import CounterOne from './useReducer/CounterOne';
+import CounterTwo from './useReducer/CounterTwo';
+import CounterThree from './useReducer/CounterThree';
+import ComponentA from './useReducer/ComponentA';
+import ComponentB from './useReducer/ComponentB';
+import ComponentC from './useReducer/ComponentC';
+import UseStateDatafetching from './useReducer/UseStateDatafetching';
+import UseReducerDataFetching from './useReducer/UseReducerDataFetching';
+import ParentComponent from './useCallBack/ParentComponent';
+import Counter from './useMemo/Counter';
+import FocusInput from './useRef/FocusInput';
+import HookTimer from './useRef/HookTimer';
+import DocTitleOne from './useCustomHooks/DocTitleOne';
+import DocTitleTwo from './useCustomHooks/DocTitleTwo';
+import CustomCounterOne from './useCustomHooks/CustomCounterOne';
+import CustomCounterTwo from './useCustomHooks/CustomCounterTwo';
+import UserForm from './useCustomHooks/UserForm';
 
+export const CountContext = React.createContext()
 
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
 
+const initialState = 0
+const reducer = (state,action) =>{
+    switch(action){
+        case 'increment':
+            return state + 1
+        case 'decrement' :
+            return state - 1
+        case 'reset' :
+            return initialState
+        default:
+             return state
+    }
+}
+
 function App(){
+  const [ count, dispatch ] = useReducer(reducer,initialState)
+
     const [students,setStudents] = useState ([
       {
         id: 1,
@@ -68,11 +102,47 @@ function App(){
     <div className = "App">
 
       <ul>
-      <UserContext.Provider value={'jefff'}>
+      <UserForm/>
+
+      {/* <CustomCounterOne/>
+      <CustomCounterTwo/> */}
+
+      {/* <DocTitleOne/>
+        <DocTitleTwo/> */}
+
+      {/* <HookTimer/> */}
+
+      {/* <FocusInput/> */}
+
+      {/* <Counter/> */}
+
+      {/* <ParentComponent/> */}
+
+      {/* <UseReducerDataFetching/> */}
+
+      {/* <UseStateDatafetching/> */}
+
+      {/* <CountContext.Provider value={{countState : count, countDispatch: dispatch}}>
+        <div>
+        Count - {count}
+        <ComponentA/>
+        <ComponentB/>
+        <ComponentC/>
+        </div>
+        
+      </CountContext.Provider> */}
+
+      {/* <CounterThree/> */}
+
+      {/* <CounterTwo/> */}
+
+      {/* <CounterOne/> */}
+
+      {/* <UserContext.Provider value={'jefff'}>
         <ChannelContext.Provider value={'codeEvolution'}>
-           <ComponentC/>
+           <UseContextComponentC/>
         </ChannelContext.Provider>
-      </UserContext.Provider>
+      </UserContext.Provider> */}
 
       {/* <DataFetchingIndividual/> */}
 
